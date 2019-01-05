@@ -136,7 +136,7 @@ class SecondPageState extends State<SecondPage> {
 
       } else {
 	var jwt = body['result']['jwt'];
-	await this.storage.write(key: Config.FSS_KEY_JWT, value: jwt);
+	storeKeyValue(Config.FSS_KEY_JWT, jwt);
 	setState(() {
 	  this.jwt = jwt;
 	  this.isLoggedIn = null == jwt ? false : true;
